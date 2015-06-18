@@ -1,0 +1,55 @@
+<!doctype html>
+<html ng-app='eventsApp'>
+    <head>
+        <title>Event Registration</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/app.css"/>
+        
+        <script src="lib/jquery.min.js"></script>
+        <script src="lib/underscore-1.4.4.min.js"></script>
+        <script src="lib/bootstrap.min.js"></script>
+        <script src="lib/angular/angular.js"></script>
+        <script src="lib/angular/angular-sanitize.min.js"></script>
+        <script src='js/app.js'></script>
+        <script src='js/controllers/EventController.js'></script>
+        <script src='js/controllers/EditEventController.js'></script>
+        <script src="js/filters.js"></script>
+        
+    </head>
+    <body ng-cloak>
+        <div class="container">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <ul class="nav">
+                        <li><a href="NewEvent.html">Create Event</a></li>
+                    </ul>
+                </div>
+            </div>
+        <div ng-controller="EditEventController" style="padding-left:20px;padding-right:20px">
+            <div class="container">
+                <h1>New Event</h1>
+                <hr/>
+                <form>
+                    <fieldset>
+                        <label for="eventName">Event Name:</label>
+                        <input id="eventName" type="text" placeholder="Name of your event..."/>
+                        <label for="eventDate">Event Date:</label>
+                        <input id="eventDate" type="date" placeholder="Name of your event..."/>
+                        <label for="eventTime">Event Time:</label>
+                        <input id="eventTime" type="time" placeholder="Name of your event..."/>
+                        <label for="eventLocation">Event Location:</label>
+                        <input id="eventAddress" type="text"  placeholder="Address of the event..."/>
+                        <br/>
+                        <input id="evebtCity" type="text" class="input-small" placeholder="City..."/>                        
+                        <input id="eventProvince" type="text" class="input-small" placeholder="Province..."/>
+                        <label for="eventImage">Image:</label>
+                        <input id="eventImage" type="text" class="input-xlarge" placeholder="Name of your event..."/>
+                       
+                    </fieldset>
+                </form>
+            </div>    
+            
+        </div>
+        </div>
+    </body>
+</html>
