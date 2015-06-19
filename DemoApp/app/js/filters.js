@@ -6,7 +6,7 @@ eventsApp.filter('duration', function(){
            case 1:
                return "Half Hour";
            case 2: 
-               return "One hour";
+               return "1 hour";
            case 3: 
                return "Hald day";
            case 4:

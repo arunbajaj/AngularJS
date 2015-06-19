@@ -1,6 +1,6 @@
- 'use strict';
+ 
 
-(function(){
+(function (){
 
     var app = angular.module('eventsApp');
     
@@ -9,7 +9,7 @@
         $scope.snippet = '<span style="color.red"> hi there </span>';
         $scope.snippetUnSafe = $sce.trustAsHtml('<span style="color.red"> hi there </span>');
         $scope.myClass="blue";
-        $scope.boolValue = false;
+        $scope.boolValue = true;
          $scope.event = {         
             name: 'Angular Boot Camp',   
             date: '6/16/2015',
