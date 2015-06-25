@@ -1,0 +1,2 @@
+eventsApp.controller('EditProfileContoller',function(){
+});
