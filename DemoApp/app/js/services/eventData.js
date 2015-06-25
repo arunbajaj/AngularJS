@@ -1,48 +1,17 @@
-eventsApp.factory('eventData',function(){
+eventsApp.factory('eventData',function($http,$q){
     
     return {
-        
-        event: {         
-            name: 'Angular Boot Camp',   
-            date: '6/16/2015',
-            time: '7:30 pm',
-            location: {
-                address: 'Penn Circle',
-                city: 'King of Prussia',
-                province: 'PA'
-                
-            },
+        getEvent: function(){
+            var deferred = $q.defer();
+            $http.get('/data/event/1.json')
+                .success(function(data,status,headers,config){
+                deferred.resolve(data);
+        })
+        .error(function(data,status,headers,config){
+                deferred.reject(status);
+        });
             
-             imageUrl: 'img/angularJS_logo.png',
-             sessions: [
-                 {
-                     name: 'Directive Masterclass',
-                     creatorName: 'Bob Smith',
-                     duration: 1,
-                     level: 'Advanced',
-                     abstract: ' In this session...'  ,
-                     upVoteCount: 0
-                 },
-                 {
-                     name: 'Scopes for fun and profit',
-                     creatorName: 'John Doe',
-                     duration: 2,
-                     level: 'Advanced',
-                     abstract: ' In this session...',
-                     upVoteCount: 0
-                 },                 
-                 {
-                     name: 'Well Behaved Controllers',
-                     creatorName: 'Bob Smith',
-                     duration: 4,
-                     level: 'Advanced',
-                     abstract: ' In this session...',
-                     upVoteCount: 0
-                 }
-            ]
-             
-             
-         }
-        
-    };    
+            return deferred.promise;
+        }
+    };
 });

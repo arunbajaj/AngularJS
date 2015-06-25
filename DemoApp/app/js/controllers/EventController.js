@@ -10,7 +10,9 @@
          
         $scope.myClass="blue";
         $scope.boolValue = true;
-        $scope.event = eventData.event;
+        eventData.getEvent().then(function(event){
+            $scope.event=event;
+        },function(statusCode){ console.log(statusCode);});
         
         
         $scope.upVoteSession=function(session)
