@@ -4,7 +4,7 @@
 
     var app = angular.module('eventsApp');
     
-    var EventController = function($scope,eventData){
+    var EventController = function($scope,eventData,$anchorscroll){
         $scope.myStyle= {color:'red'};
         $scope.snippet = '<span style="color.red"> hi there </span>';
          
@@ -30,6 +30,9 @@
             }
         };
         
+        $scope.scrollToSession= function(){
+            $anchorscroll();
+        };
     };
     
     app.controller("EventController",["$scope","eventData",EventController]);
